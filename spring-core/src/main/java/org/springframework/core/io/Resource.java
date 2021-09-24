@@ -27,6 +27,8 @@ import java.nio.channels.ReadableByteChannel;
 import org.springframework.lang.Nullable;
 
 /**
+ * 内部资源接口，封装了资源是否存在、是否只读等属性
+ *
  * Interface for a resource descriptor that abstracts from the actual
  * type of underlying resource, such as a file or class path resource.
  *
