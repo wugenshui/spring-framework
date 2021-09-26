@@ -1,6 +1,9 @@
-# build
+## build
 
 `gradle build -x api -x test -x javadoc -x dokka`
+
+## config
+vm options: `-Dfile.encoding=UTF-8`
 
 # <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework
 

@@ -1,7 +1,7 @@
 package com.wugenshui.spring.read.demo;
 
-
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.ByteArrayOutputStream;
@@ -24,10 +24,11 @@ public class App {
 		System.out.println(resource.isReadable());
 		System.out.println("输出中文");
 
-//		BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring.xml"));
-//		MyTestBean bean = (MyTestBean) bf.getBean("MyTestBean");
-//		System.out.println("bean = " + bean.getTestStr());
-//		System.out.println("init");
+		BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring.xml"));
+		MyTestBean bean = (MyTestBean) bf.getBean("MyTestBean");
+		System.out.println("bean = " + bean.getTestStr());
+
+		System.out.println("init");
 	}
 
 	public static String readInputStream(InputStream inputStream) throws IOException {
