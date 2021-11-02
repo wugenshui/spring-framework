@@ -11,8 +11,9 @@ import java.io.InputStream;
 public class App {
 	public static void main(String[] args) throws IOException {
 		ClassPathResource resource = new ClassPathResource("spring.xml");
+		System.out.println(resource.getURL());
+		System.out.println(resource.getURI());
 		InputStream inputStream = resource.getInputStream();
-
 		System.out.println(readInputStream(inputStream));
 
 		System.out.println(resource.exists());
@@ -27,6 +28,9 @@ public class App {
 		BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring.xml"));
 		MyTestBean bean = (MyTestBean) bf.getBean("MyTestBean");
 		System.out.println("bean = " + bean.getTestStr());
+
+		final ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
+		System.out.println("systemClassLoader = " + systemClassLoader);
 
 		System.out.println("init");
 	}
